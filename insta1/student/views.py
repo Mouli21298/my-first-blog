@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import StudentRecords
 # Create your views he
 def stu_list(request):
-	return render(request,'student/stu_list.html')
+	sturec=StudentRecords.objects.all()
+	return render(request,'student/stu_list.html',{'sturec':sturec})
